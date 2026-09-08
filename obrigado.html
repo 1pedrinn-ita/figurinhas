@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="h-full antialiased">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Suas Figurinhas Estão Prontas | Eleições 2026</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="assets/icon.svg" sizes="any" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="_next/static/chunks/012v3_9h1ta54.css" />
+  <link rel="stylesheet" href="_next/static/chunks/16zde35awp27y.css" />
+  <style>
+    body { background: var(--papel, #f2efe8); }
+    .ent-wrap { max-width: 460px; margin: 0 auto; padding: 24px 18px 60px; }
+    .ent-selo { display:inline-block; background:#fff; border:1px solid var(--borda,#14161a1a); border-radius:999px; padding:5px 14px; font-size:12px; color:var(--tema-destaque,#0e7c4a); font-weight:700; }
+    .ent-h1 { font-family: var(--font-titulo,"Archivo Black",sans-serif); font-size: clamp(2.2rem,11vw,3rem); line-height:.98; margin:10px 0 4px; text-align:center; color:var(--tinta,#14161a); }
+    .ent-sub { text-align:center; color:var(--tinta-suave,#5b616b); margin:0 0 18px; font-family:var(--font-papernotes,"SummerCrush",cursive); font-size:1.2rem; }
+    .grade3 { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+    .celula .quadro { position:relative; width:100%; aspect-ratio:1/1; border-radius:14px; overflow:hidden; border:1px solid var(--borda,#14161a1a); background:#fff; }
+    .celula .quadro canvas, .celula .quadro img { width:100%; height:100%; display:block; }
+    .acoes { display:flex; flex-direction:column; gap:10px; margin:20px 0 8px; }
+    .btn { display:flex; align-items:center; justify-content:center; gap:8px; width:100%; border:none; border-radius:16px; padding:16px 18px; font-family:var(--font-titulo,"Archivo Black",sans-serif); font-size:1.02rem; letter-spacing:.01em; cursor:pointer; text-decoration:none; box-sizing:border-box; }
+    .btn-green { background:#1FA855; color:#fff; }
+    .btn-wpp { background:#128C7E; color:#fff; }
+    .btn-outline { background:#fff; color:var(--tinta,#14161a); border:2px solid var(--borda,#14161a33); }
+    .btn:active { transform:scale(.99); }
+    .btn[disabled] { opacity:.5; cursor:default; }
+    .ent-nota { text-align:center; color:var(--tinta-suave,#5b616b); font-size:.88rem; margin:8px 0 0; }
+    .ent-erro { text-align:center; color:#c0122d; font-size:.9rem; margin-top:10px; }
+    details.como { margin-top:16px; background:#fff; border:1px solid var(--borda,#14161a1a); border-radius:14px; padding:12px 14px; }
+    details.como summary { font-weight:700; cursor:pointer; font-family:var(--font-numero,"Barlow Condensed",sans-serif); letter-spacing:.04em; }
+    details.como ol { margin:10px 0 0; padding-left:18px; color:var(--tinta-suave,#5b616b); font-size:.92rem; line-height:1.5; }
+    .vazio { text-align:center; padding:40px 10px; }
+    .vazio a { color:var(--tema-destaque,#0e7c4a); font-weight:700; }
+  </style>
+</head>
+<body class="min-h-full flex flex-col">
+  <main class="ent-wrap">
+    <div id="pronto" hidden>
+      <p style="text-align:center"><span class="ent-selo">Pagamento confirmado</span></p>
+      <h1 class="ent-h1">ELEITO! 🎉</h1>
+      <p class="ent-sub">Suas 9 figurinhas estão prontas. Instale no WhatsApp em 1 toque.</p>
+
+      <div class="pack-detail">
+        <div class="grade3" id="grade"></div>
+      </div>
+
+      <div class="acoes">
+        <button class="btn btn-green" id="btn-instalar">INSTALAR NO WHATSAPP (1 TOQUE)</button>
+        <button class="btn btn-wpp" id="btn-enviar">ENVIAR NO WHATSAPP</button>
+        <button class="btn btn-outline" id="btn-baixar">BAIXAR AS 9 SEPARADAS</button>
+      </div>
+      <p class="ent-nota" id="nota"></p>
+      <p class="ent-erro" id="erro" hidden></p>
+
+      <details class="como">
+        <summary>Como instalar no WhatsApp</summary>
+        <ol>
+          <li>Toque em Instalar no WhatsApp. Vai baixar um arquivo de figurinhas.</li>
+          <li>Abra o arquivo. Se pedir um app, instale um gratuito de figurinhas, como o Sticker Maker.</li>
+          <li>No app, toque em Adicionar ao WhatsApp e pronto.</li>
+        </ol>
+      </details>
+    </div>
+
+    <div id="vazio" class="vazio" hidden>
+      <p style="font-size:2.4rem">🖼️</p>
+      <h1 class="ent-h1" style="font-size:1.8rem">Cadê o seu pack?</h1>
+      <p class="ent-sub">Não achamos suas figurinhas neste aparelho. Crie o seu pack primeiro.</p>
+      <p><a href="/">← Criar minhas figurinhas</a></p>
+    </div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="/obrigado.js" defer></script>
+</body>
+</html>

@@ -252,7 +252,15 @@
     }).then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
       .then(function (res) {
         if (res.ok && res.d.ok && res.d.imageBase64) {
-          ov.querySelector("#fx-res-img").src = "data:" + (res.d.mimeType || "image/png") + ";base64," + res.d.imageBase64;
+          var dataUrl = "data:" + (res.d.mimeType || "image/png") + ";base64," + res.d.imageBase64;
+          ov.querySelector("#fx-res-img").src = dataUrl;
+          // Guarda o pack para a página de entrega (/obrigado) ler depois do pagamento.
+          try {
+            localStorage.setItem("pack_base", dataUrl);
+            localStorage.setItem("pack_nome", estado.nome);
+            localStorage.setItem("pack_numero", estado.numero);
+            localStorage.setItem("pack_tema", estado.tema);
+          } catch (e) {}
           irPara("resultado");
         } else {
           erro("fx-erro-txt", (res.d && res.d.erro) || "Não conseguimos gerar agora. Tente de novo.");
